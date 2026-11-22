@@ -1,0 +1,36 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: demo-dev
+
+resources:
+  - ../../base
+
+namePrefix: dev-
+
+labels:
+  - pairs:
+      env: dev
+
+replicas:
+  - name: demo-app
+    count: 1
+
+images:
+  - name: ghcr.io/serorsalman/gitops-demo-app
+    newTag: dev
+
+patches:
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: demo-app
+      spec:
+        template:
+          spec:
+            containers:
+              - name: demo-app
+                env:
+                  - name: ENVIRONMENT
+                    value: dev
