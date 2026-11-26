@@ -17,7 +17,7 @@ replicas:
     count: 2
 
 images:
-  - name: ghcr.io/serorsalman/gitops-demo-app
+  - name: ghcr.io/serorromero/gitops-demo-app
     newTag: staging
 
 patches:

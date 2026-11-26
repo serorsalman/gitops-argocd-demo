@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: demo-app
-          image: ghcr.io/serorsalman/gitops-demo-app:latest
+          image: ghcr.io/serorromero/gitops-demo-app:latest
           ports:
             - containerPort: 8080
           env:

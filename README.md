@@ -36,8 +36,8 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 # 3. Build and load the app image into kind
-docker build -t ghcr.io/serorsalman/gitops-demo-app:dev ./app
-kind load docker-image ghcr.io/serorsalman/gitops-demo-app:dev --name gitops-demo
+docker build -t ghcr.io/serorromero/gitops-demo-app:dev ./app
+kind load docker-image ghcr.io/serorromero/gitops-demo-app:dev --name gitops-demo
 
 # 4. Point Argo CD at this repo and apply the dev application
 kubectl apply -f argocd/dev.yaml
